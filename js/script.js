@@ -1,6 +1,6 @@
 "use strict";
 
-// Lesson № 19
+//       -------------------------------      Lesson № 19      ---------------------------------------
 
 // const numberOfFilms = +prompt('Скільки фільмів ви вже подивились?', '');
 
@@ -22,7 +22,7 @@
 
 // console.log(personalMovieDB);
 
-// Lesson №20
+//        ------------------------------------      Lesson №20     ---------------------------------
 
 // const num = 50;
 
@@ -53,7 +53,7 @@
 // 		break;
 // }
 
-//  LESSON № 21 ЛОГІЧНІ ОПЕРАТОРИ
+//        ------------------------------      LESSON № 21 ЛОГІЧНІ ОПЕРАТОРИ      --------------------
 
 // const hamburger = 5;
 // const fries = 6;
@@ -98,7 +98,7 @@ const potatos = 3;
 const nuggets = 2;
 
 
-if (chiken === 3 && soda === 2 || potatos === 3 && nuggets ) {
+if (chiken === 3 && soda === 2 || potatos === 3 && nuggets) {
 	console.log('All right!');
 } else {
 	console.log('fuck you!');
@@ -110,21 +110,21 @@ console.log(chiken === 3 && soda === 2 || potatos === 3 && nuggets);
 // в логічний тип даних(true/false).
 
 //Практичне завдання № 1
-console.log( NaN || 2 || undefined ); // 2
- 
-console.log( NaN && 2 && undefined ); // NaN
- 
-console.log( 1 && 2 && 3 ); // 3
+console.log(NaN || 2 || undefined); // 2
 
-console.log( !1 && 2 || !3 ); // false
- 
-console.log( 25 || null && !3 ); // 25
- 
-console.log( NaN || null || !3 || undefined || 5); // 5
- 
-console.log( NaN || null && !3 && undefined || 5); // 5
- 
-console.log( 5 === 5 && 3 > 1 || 5); // true
+console.log(NaN && 2 && undefined); // NaN
+
+console.log(1 && 2 && 3); // 3
+
+console.log(!1 && 2 || !3); // false
+
+console.log(25 || null && !3); // 25
+
+console.log(NaN || null || !3 || undefined || 5); // 5
+
+console.log(NaN || null && !3 && undefined || 5); // 5
+
+console.log(5 === 5 && 3 > 1 || 5); // true
 
 // Практичне завдання № 2
 
@@ -132,9 +132,9 @@ const hame = 3;
 const chees = 3;
 const pepsi = 0;
 const panini = 2;
- 
+
 if (hame === 3 && pepsi || chees === 3 && panini) {
-   console.log('Done!');
+	console.log('Done!');
 }
 console.log(hame === 3 && pepsi || chees === 3 && panini);
 // Умова виконується(значення 2)!
@@ -145,9 +145,9 @@ let hamburger;
 const fries = NaN;
 const cola = 0;
 const noga = 2;
- 
+
 if (hamburger || cola || fries === 3 || noga) {
-   console.log('Done!');
+	console.log('Done!');
 }
 
 console.log(hamburger || cola || fries === 3 || noga);
@@ -160,11 +160,116 @@ let a;
 const b = NaN;
 const c = 0;
 const d = 2;
- 
+
 if (a && c || b === 3 && d) {
-   console.log('Done!');
+	console.log('Done!');
 }
 
 console.log(a && c || b === 3 && d);
 
 //	Умова не виконується(значення false).
+
+
+// 				 --------------------------        LESSON № 22 Цикл     ----------------------------------
+
+
+// let num = 50;
+
+// while (num <= 55) {
+// 	console.log(num);
+// 	num++;
+// }
+
+let i = 2;
+
+while (i < 16) {
+	i++;
+	if( i % 2 === 0) {
+		continue;
+	} else {
+		console.log(i);
+	}
+}
+
+
+
+
+for (let i = 2; i <= 16; i++) {
+	if (i % 2 === 0) {
+		continue;
+	} else {
+		console.log(i);
+	}
+}
+
+
+
+// do {
+// 	console.log(num);
+// 	num++;
+// }
+// while(num < 55);
+
+for (let i = 1; i < 10; i++) {
+	if (i === 6) {
+		// break;
+		continue;
+	}
+	console.log(i);
+
+}
+
+for (let i = 20; i >= 10; i--) {
+	if(i === 13) {
+		break;
+	}
+	console.log(i);
+}
+
+function firstTask() {
+	// Пишем решение вот тут
+	for(let i = 5; i <= 10; i++) {
+console.log(i);
+}
+	
+}
+firstTask();
+
+
+function fifthTask() {
+	const arrayOfNumbers = [];
+
+	for (let i = 5; i < 11; i++) {
+			arrayOfNumbers[i - 5] = i;
+	}
+
+	console.log(arrayOfNumbers);
+	return arrayOfNumbers;
+}
+
+fifthTask();
+
+for(let i = 3; i <= 50; i++ ){
+	if( i % 23 === 0){
+		continue;
+	}
+	console.log(i);
+}
+
+
+function firstTask() {
+	// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+	const arr = [3, 5, 8, 16, 20, 23, 50];
+	const result = [];
+
+	// Пишем решение вот тут
+	for(let i = 0; i < arr.length; i++) {
+		result[i] = arr[i];
+		
+	}
+	console.log(result);
+	// Не трогаем
+	return result;
+}
+
+firstTask();
