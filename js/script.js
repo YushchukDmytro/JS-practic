@@ -156,16 +156,16 @@ console.log(hamburger || cola || fries === 3 || noga);
 
 // Практичне завдання № 4
 
-let a;
-const b = NaN;
-const c = 0;
-const d = 2;
+// let a;
+// const b = NaN;
+// const c = 0;
+// const d = 2;
 
-if (a && c || b === 3 && d) {
-	console.log('Done!');
-}
+// if (a && c || b === 3 && d) {
+// 	console.log('Done!');
+// }
 
-console.log(a && c || b === 3 && d);
+// console.log(a && c || b === 3 && d);
 
 //	Умова не виконується(значення false).
 
@@ -249,12 +249,7 @@ function fifthTask() {
 
 fifthTask();
 
-for(let i = 3; i <= 50; i++ ){
-	if( i % 23 === 0){
-		continue;
-	}
-	console.log(i);
-}
+
 
 
 function firstTask() {
@@ -273,3 +268,54 @@ function firstTask() {
 }
 
 firstTask();
+
+
+function secondTask() {
+	// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+	const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+	// Пишем решение вот тут
+	for(let i = 0; i < data.length; i++) {
+		if(typeof(data[i]) === 'number') {
+			data[i] = data[i] * 2;
+		} else if(typeof(data[i] === 'string')) {
+			data[i]= `${data[i]} - done`;
+		}
+	}
+	console.log(data);
+	// Не трогаем
+	return data;
+}
+
+secondTask();
+
+
+// let result = '';
+// const lines = 8;
+
+// for(let i = 1; i < lines; i++){
+// 	for(let j = 8; j >i; j--){
+// 		result += '*';
+// 	}
+// 	result += '\n';
+// }
+
+
+// console.log(result);
+
+const lines = 5;
+let result = '';
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        result += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+        result += "*";
+    }
+    result += "\n";
+}
+
+console.log(result);
+
+
