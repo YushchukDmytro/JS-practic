@@ -58,32 +58,47 @@
 const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
-	count : numberOfFilms,
-	movies : {},
-	actors : {},
-	genres : [],
-	privat : false
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
 };
 
 
 
-//      ---------------- Цикл "while" -----------------
-	// let i = 1;
+//       ------------------- ЦИКЛ " for" --------------------
+// for(let i = 0; i < 2; i++){
+// 	const a = prompt('Один из последних просмотренных фильмов?', ''),
+// 				b = prompt('На сколько оцените его?', '');
 
-	// while(i < 3) {
-	// 	i++;
-	// 	const a = prompt('Один из последних просмотренных фильмов?', ''),
-	// 				b = prompt('На сколько оцените его?', '');
-				
-	// 	if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-	// 			console.log('done');
-	// 			personalMovieDB.movies[a] = b;
-	// 		} else {
-	// 			console.log('Error');
-	// 			i--;
-	// 		}
-	
-	// }
+// if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+// 	console.log('done');
+// 	personalMovieDB.movies[a] = b;
+// } else {
+// 	console.log('Error');
+// 	i--;
+// }
+// }
+
+
+//      ---------------- Цикл "while" -----------------
+// let i = 1;
+
+// while(i < 3) {
+// 	i++;
+// 	const a = prompt('Один из последних просмотренных фильмов?', ''),
+// 				b = prompt('На сколько оцените его?', '');
+
+// 	if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+// 			console.log('done');
+// 			personalMovieDB.movies[a] = b;
+// 		} else {
+// 			console.log('Error');
+// 			i--;
+// 		}
+
+// }
 
 
 //       --------------------  Цикл "while" але спочатку іде "do"  ------------------
@@ -92,44 +107,74 @@ let i = 1;
 
 do {
 	i++;
-		const a = prompt('Один из последних просмотренных фильмов?', ''),
-					b = prompt('На сколько оцените его?', '');
-				
-		if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-				console.log('done');
-				personalMovieDB.movies[a] = b;
-			} else {
-				console.log('Error');
-				i--;
-			}
+	const a = prompt('Один из последних просмотренных фильмов?', ''),
+		b = prompt('На сколько оцените его?', '');
+
+	if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+		console.log('done');
+		personalMovieDB.movies[a] = b;
+	} else {
+		console.log('Error');
+		i--;
+	}
 }
-while( i < 3);
+while (i < 3);
 
 
-//       ------------------- ЦИКЛ " for" --------------------
-			// for(let i = 0; i < 2; i++){
-			// 	const a = prompt('Один из последних просмотренных фильмов?', ''),
-			// 				b = prompt('На сколько оцените его?', '');
-
-			// if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-			// 	console.log('done');
-			// 	personalMovieDB.movies[a] = b;
-			// } else {
-			// 	console.log('Error');
-			// 	i--;
-			// }
-			// }
-
-			if(personalMovieDB.count < 10) {
-				console.log("Просмотрено довольно мало фильмов");
-			} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-				console.log("Вы классический зритель");
-			} else if(personalMovieDB.count >= 30) {
-				console.log("Вы киноман");
-			} else {
-				console.log("Произошла ошибка");
-			}
+if (personalMovieDB.count < 10) {
+	console.log("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+	console.log("Вы классический зритель");
+} else if (personalMovieDB.count >= 30) {
+	console.log("Вы киноман");
+} else {
+	console.log("Произошла ошибка");
+}
 
 
 
 console.log(personalMovieDB);
+
+
+//   ------------------------ Lesson №27,5 Практика по функціях --------------------------
+
+																					// ----------- № 1 ---------
+
+function sayHello(name) {
+	return `Привет, ${name}!`;
+}
+
+console.log(sayHello('Alex'));
+
+																					// ----------- № 2 ---------
+
+function returnNeighboringNumbers(n) {
+ return[n-1, n, n+1];
+}
+console.log(returnNeighboringNumbers(5));
+
+//  ---------------- № 3 -------------------
+
+function getMathResult(num, times) {
+	if (typeof(times) !== 'number' || times <= 0) {
+			return num;
+	}
+
+	let str = '';
+
+	for (let i = 1; i <= times; i++) {
+			if (i === times) {
+					str += `${num * i}`;
+					// Тут без черточек в конце
+					// str = str + `${num * i}`;
+			} else {
+					str += `${num * i}---`;
+					// Это тоже самое, что и
+					// str = str + num * i + "---"
+			}
+	}
+
+	return str;
+}
+
+console.log(getMathResult(10, 5));
