@@ -295,21 +295,41 @@ writeYourGenres();
 
 
 function getCoupeNumber(setNumber) {
-	if(setNumber !== "number" || setNumber < 0 || !Number.isInteger(setNumber)) {
-		return "Ошибка.Проверте правильность введения места!";
+	if(typeof(setNumber) !== "number" || setNumber < 0 || !Number.isInteger(setNumber)) {
+		return console.log("Ошибка.Проверте правильность введения места!");
 	}
 
 		if(setNumber === 0 || setNumber > 36) {
-			return "Таких мест в вагоне не существует!";
+			return console.log("Таких мест в вагоне не существует!");
 		}
 
 	  for (let i = 4; i <= 36; i = i + 4) {
 			if (setNumber <= i) {
-					return Math.ceil(i / 4);
+					return console.log(Math.ceil(i / 4));
 			}
 	}
 
 }
 getCoupeNumber(33);
 
+// Площадь и обЪем куба! 
 
+function calculateVolumeAndArea(length) {
+
+	if(typeof(length) !== "number" || length < 0 || !Number.isInteger(length)) {
+		return console.log("При вычислении произошла ошибка!");
+	}
+
+	let value = 0,
+			area = 0;
+
+			value = length * length * length;
+
+			area = 6 *(length * length);
+
+			return console.log(`Объем куба: ${value}, площадь всей поверхности: ${area}`);
+
+}
+
+
+calculateVolumeAndArea(5);
