@@ -183,11 +183,11 @@
 
 // const str = "Hello my name is Dima. I have twenty five years old.";
 
-// // console.log(str.indexOf("twenty five"));
-// // console.log(str.slice(30, 41));
+// console.log(str.indexOf("twenty five"));
+// console.log(str.slice(30, 41));
 
-// // console.log(str.indexOf("Dima"));
-// // console.log(str.slice(17, 21));
+// console.log(str.indexOf("Dima"));
+// console.log(str.slice(17, 21));
 // console.log(str.substr(9, 4));
 
 // const num = 12.5;
@@ -289,3 +289,27 @@ for(let i = 1; i <= 3; i++) {
 	
 }
 writeYourGenres();
+
+
+//  ---------------------- Упражненние по написанию кода № 7 ----------------------
+
+
+function getCoupeNumber(setNumber) {
+	if(setNumber !== "number" || setNumber < 0 || !Number.isInteger(setNumber)) {
+		return "Ошибка.Проверте правильность введения места!";
+	}
+
+		if(setNumber === 0 || setNumber > 36) {
+			return "Таких мест в вагоне не существует!";
+		}
+
+	  for (let i = 4; i <= 36; i = i + 4) {
+			if (setNumber <= i) {
+					return Math.ceil(i / 4);
+			}
+	}
+
+}
+getCoupeNumber(33);
+
+
