@@ -214,141 +214,159 @@ P.S. Функции вызывать не обязательно*/
 
 // Код возьмите из предыдущего домашнего задания
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start() {
+// 	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-	while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-			numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-	}
-}
+// 	while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+// 			numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// 	}
+// }
 
-start();
-
-
-
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
+// start();
 
 
 
-function rememderMyFilms() {
-	for(let i = 0; i < 2; i++){
-		const a = prompt('Один из последних просмотренных фильмов?', ''),
-					b = prompt('На сколько оцените его?', '');
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// };
+
+
+
+// function rememderMyFilms() {
+// 	for(let i = 0; i < 2; i++){
+// 		const a = prompt('Один из последних просмотренных фильмов?', ''),
+// 					b = prompt('На сколько оцените его?', '');
 	
-	if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-		console.log('done');
-		personalMovieDB.movies[a] = b;
-	} else {
-		console.log('Error');
-		i--;
-	}
-	}
+// 	if(a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+// 		console.log('done');
+// 		personalMovieDB.movies[a] = b;
+// 	} else {
+// 		console.log('Error');
+// 		i--;
+// 	}
+// 	}
+// }
+
+// // rememderMyFilms();
+
+
+// function detectPersonalLevel() {
+// 	if (personalMovieDB.count < 10) {
+// 		console.log("Просмотрено довольно мало фильмов");
+// 	} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+// 		console.log("Вы классический зритель");
+// 	} else if (personalMovieDB.count >= 30) {
+// 		console.log("Вы киноман");
+// 	} else {
+// 		console.log("Произошла ошибка");
+// 	}
+// }
+
+// // detectPersonalLevel();
+
+
+// function showMyDB(hidden) {
+
+// 	if(!hidden) {
+// 		console.log(personalMovieDB);
+// 	} 
+// }
+
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+
+// for(let i = 1; i <= 3; i++) {
+// 		const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+// 		personalMovieDB.genres[i - 1] = genre;
+// 	}
+	
+// }
+// writeYourGenres();
+
+
+// //  ---------------------- Упражненние по написанию кода № 7 ----------------------
+
+
+// function getCoupeNumber(setNumber) {
+// 	if(typeof(setNumber) !== "number" || setNumber < 0 || !Number.isInteger(setNumber)) {
+// 		return console.log("Ошибка.Проверте правильность введения места!");
+// 	}
+
+// 		if(setNumber === 0 || setNumber > 36) {
+// 			return console.log("Таких мест в вагоне не существует!");
+// 		}
+
+// 	  for (let i = 4; i <= 36; i = i + 4) {
+// 			if (setNumber <= i) {
+// 					return console.log(Math.ceil(i / 4));
+// 			}
+// 	}
+
+// }
+// getCoupeNumber(33);
+
+// // Площадь и обЪем куба! 
+
+// function calculateVolumeAndArea(length) {
+
+// 	if(typeof(length) !== "number" || length < 0 || !Number.isInteger(length)) {
+// 		return console.log("При вычислении произошла ошибка!");
+// 	}
+
+// 	let value = 0,
+// 			area = 0;
+
+// 			value = length * length * length;
+
+// 			area = 6 *(length * length);
+
+// 			return console.log(`Объем куба: ${value}, площадь всей поверхности: ${area}`);
+
+// }
+
+
+// calculateVolumeAndArea(5);
+
+
+// //  ---------------------- Упражненние по написанию кода № 8 ----------------------
+
+
+// function findMaxNumber(a, b, c, d) {
+	
+// 	if(typeof(a) !== "number" ||
+// 		typeof(b) !== "number" ||
+// 		typeof(c) !== "number" ||
+// 		typeof(d) !== "number"
+// 	) {
+// 		return 0;
+// 	} else {
+// 		return Math.max(a,b,c,d);
+// 	}
+// }
+// findMaxNumber(5,6,7,34);
+
+// //  ---------------------- Lesson № 31 Callback ----------------------
+
+function andre(who, callback1, callback2) {
+	console.log(`Архоп: ${who}`);
+	callback1();
+	callback2();
 }
 
-// rememderMyFilms();
-
-
-function detectPersonalLevel() {
-	if (personalMovieDB.count < 10) {
-		console.log("Просмотрено довольно мало фильмов");
-	} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-		console.log("Вы классический зритель");
-	} else if (personalMovieDB.count >= 30) {
-		console.log("Вы киноман");
-	} else {
-		console.log("Произошла ошибка");
-	}
-}
-
-// detectPersonalLevel();
-
-
-function showMyDB(hidden) {
-
-	if(!hidden) {
-		console.log(personalMovieDB);
-	} 
-}
-
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres() {
-
-for(let i = 1; i <= 3; i++) {
-		const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-		personalMovieDB.genres[i - 1] = genre;
-	}
+function nice() {
+	console.log(`Діма: топ поп!`);
 	
 }
-writeYourGenres();
 
-
-//  ---------------------- Упражненние по написанию кода № 7 ----------------------
-
-
-function getCoupeNumber(setNumber) {
-	if(typeof(setNumber) !== "number" || setNumber < 0 || !Number.isInteger(setNumber)) {
-		return console.log("Ошибка.Проверте правильность введения места!");
-	}
-
-		if(setNumber === 0 || setNumber > 36) {
-			return console.log("Таких мест в вагоне не существует!");
-		}
-
-	  for (let i = 4; i <= 36; i = i + 4) {
-			if (setNumber <= i) {
-					return console.log(Math.ceil(i / 4));
-			}
-	}
-
-}
-getCoupeNumber(33);
-
-// Площадь и обЪем куба! 
-
-function calculateVolumeAndArea(length) {
-
-	if(typeof(length) !== "number" || length < 0 || !Number.isInteger(length)) {
-		return console.log("При вычислении произошла ошибка!");
-	}
-
-	let value = 0,
-			area = 0;
-
-			value = length * length * length;
-
-			area = 6 *(length * length);
-
-			return console.log(`Объем куба: ${value}, площадь всей поверхности: ${area}`);
-
+function nice2() {
+	console.log("Діма і так топ!");
 }
 
-
-calculateVolumeAndArea(5);
-
-
-//  ---------------------- Упражненние по написанию кода № 8 ----------------------
-
-
-function findMaxNumber(a, b, c, d) {
-	
-	if(typeof(a) !== "number" ||
-		typeof(b) !== "number" ||
-		typeof(c) !== "number" ||
-		typeof(d) !== "number"
-	) {
-		return 0;
-	} else {
-		return Math.max(a,b,c,d);
-	}
-}
-findMaxNumber(5,6,7,34);
-
+andre("Чорт", nice, nice2);
