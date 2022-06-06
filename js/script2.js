@@ -374,25 +374,127 @@ andre("Чорт", nice, nice2);
 
 //  ---------------------- Lesson № 32 Object ----------------------
 
-const options = {
-	name: "test",
-	width: 1024,
-	height: 1024,
-	colour: {
-		border: "black",
-		bg: "red"
+// const options = {
+// 	name: "test",
+// 	width: 1024,
+// 	height: 1024,
+// 	colour: {
+// 		border: "black",
+// 		bg: "red"
+// 	}
+// };
+
+// for (let key in options) {
+// if(typeof(options[key]) === "object") {
+// 	for(let i in options[key]) {
+// 		console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+// 	}
+
+// 	} else {
+// 		console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// 	}
+// }
+
+
+
+const obj = {
+  firstName: "Dima",
+	lastName: "Yuschuck",
+	age: 25,
+	wife: {
+		firstName:"Margarita",
+		lastName: "Samchuk",
+		age: 24
+	},
+	makeTest: function () {
+		console.log("TEST");
 	}
 };
 
-for (let key in options) {
-if(typeof(options[key]) === "object") {
-	for(let i in options[key]) {
-		console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-	}
+let arr = 0;
 
-	} else {
-		console.log(`Свойство ${key} имеет значение ${options[key]}`);
+for(let k in obj) {
+	if(typeof(obj[k]) === "object") {
+		for(let j in obj[k]) {
+			console.log(`Свойство ${j} имеет значение ${obj[k][j]}`);
+		}	
+		arr++;	
+	} else{
+		console.log(`Свойство ${k} имеет значение ${obj[k]}`);
+		arr++;
 	}
 }
+obj.makeTest();
+console.log(Object.keys(obj).length);
+console.log(`Довжина: ${arr}`);
 
 
+
+// const pack = {
+// 	dark: "pamp",
+// 	secondType: 123,
+// 	pers: {
+// 		pig: "pork",
+// 	}
+// };
+
+// for(let key in pack) {
+// 	if(typeof(pack[key] === "object")) {
+// 		for(let i in pack[key]) {
+// 			console.log(`Свойство ${i} имеет значение ${pack[key][i]}`);
+// 		}
+// 	} else {
+// 		console.log(`Свойство ${key} имеет значение ${pack[key]}`);
+// 	}
+// }
+// console.log(Object.keys(pack).length);
+
+
+// function call(name, callback) {
+// 	console.log(`Функцію написав: ${name}`);
+// 	callback();
+// }
+
+// function back() {
+// 	console.log("Так, абсолютно вірно!");
+// }
+
+// call("Dima", back);
+
+
+// const call = {
+// 	name: "function",
+// 	abou: "back",
+// 	abouWhat: {
+// 		return: "lastName"
+// 	}
+// };
+
+// let length = 0;
+
+// for(let key in call) {
+// 	if(typeof(call[key]) === "object") {
+// 		for(let i in call[key]) {
+// 			console.log(`Свойство ${i} имеет значение ${call[key][i]}`);
+// 		}
+		
+// } else {
+// 	console.log(`Свойство ${key} имеет значение ${call[key]}`);
+// 	length ++;
+// }
+// } 
+// console.log(`Довжина ${length}`);
+
+
+var codes = {
+  "+7": "Россия",
+  "+38": "Украина",
+  "+1": "США"
+};
+
+for (var code in codes) {
+  var value = codes[code];
+  code = +code; // ..если нам нужно именно число, преобразуем: "+7" -> 7
+
+  console.log( codes ); // 7, 38, 1 во всех браузерах
+}
