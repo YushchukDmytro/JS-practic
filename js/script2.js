@@ -354,22 +354,22 @@ P.S. Функции вызывать не обязательно*/
 
 // //  ---------------------- Lesson № 31 Callback ----------------------
 
-function andre(who, callback1, callback2) {
-	console.log(`Архоп: ${who}`);
-	callback1();
-	callback2();
-}
+// function andre(who, callback1, callback2) {
+// 	console.log(`Архоп: ${who}`);
+// 	callback1();
+// 	callback2();
+// }
 
-function nice() {
-	console.log(`Діма: топ поп!`);
+// function nice() {
+// 	console.log(`Діма: топ поп!`);
 	
-}
+// }
 
-function nice2() {
-	console.log("Діма і так топ!");
-}
+// function nice2() {
+// 	console.log("Діма і так топ!");
+// }
 
-andre("Чорт", nice, nice2);
+// andre("Чорт", nice, nice2);
 
 
 //  ---------------------- Lesson № 32 Object ----------------------
@@ -384,6 +384,9 @@ andre("Чорт", nice, nice2);
 // 	}
 // };
 
+// const {border, bg} = options.colour;
+// console.log(bg);
+
 // for (let key in options) {
 // if(typeof(options[key]) === "object") {
 // 	for(let i in options[key]) {
@@ -397,36 +400,40 @@ andre("Чорт", nice, nice2);
 
 
 
-const obj = {
-  firstName: "Dima",
-	lastName: "Yuschuck",
-	age: 25,
-	wife: {
-		firstName:"Margarita",
-		lastName: "Samchuk",
-		age: 24
-	},
-	makeTest: function () {
-		console.log("TEST");
-	}
-};
+// const obj = {
+//   firstName: "Dima",
+// 	lastName: "Yuschuck",
+// 	age: 25,
+// 	wife: {
+// 		firstName:"Margarita",
+// 		lastName: "Samchuk",
+// 		age: 24
+// 	},
+// 	makeTest: function () {
+// 		console.log("TEST");
+// 	}
+// };
 
-let arr = 0;
+// let arr = 0;
 
-for(let k in obj) {
-	if(typeof(obj[k]) === "object") {
-		for(let j in obj[k]) {
-			console.log(`Свойство ${j} имеет значение ${obj[k][j]}`);
-		}	
-		arr++;	
-	} else{
-		console.log(`Свойство ${k} имеет значение ${obj[k]}`);
-		arr++;
-	}
-}
-obj.makeTest();
-console.log(Object.keys(obj).length);
-console.log(`Довжина: ${arr}`);
+// for(let k in obj) {
+// 	if(typeof(obj[k]) === "object") {
+// 		for(let j in obj[k]) {
+// 			console.log(`Свойство ${j} имеет значение ${obj[k][j]}`);
+// 		}	
+// 		arr++;	
+// 	} else{
+// 		console.log(`Свойство ${k} имеет значение ${obj[k]}`);
+// 		arr++;
+// 	}
+// }
+
+// const {firstName, lastName, age} = obj.wife;
+// console.log(firstName);
+
+// obj.makeTest();
+// console.log(Object.keys(obj).length);
+// console.log(`Довжина: ${arr}`);
 
 
 
@@ -486,15 +493,56 @@ console.log(`Довжина: ${arr}`);
 // console.log(`Довжина ${length}`);
 
 
-var codes = {
-  "+7": "Россия",
-  "+38": "Украина",
-  "+1": "США"
-};
+// var codes = {
+//   "+7": "Россия",
+//   "+38": "Украина",
+//   "+1": "США"
+// };
 
-for (var code in codes) {
-  var value = codes[code];
-  code = +code; // ..если нам нужно именно число, преобразуем: "+7" -> 7
+// for (var code in codes) {
+//   var value = codes[code];
+//   code = +code; // ..если нам нужно именно число, преобразуем: "+7" -> 7
 
-  console.log( codes ); // 7, 38, 1 во всех браузерах
-}
+//   console.log( codes ); // 7, 38, 1 во всех браузерах
+// }
+
+// Напишите деструктурирующее присваивание, которое:
+
+// свойство name присвоит в переменную name.
+// свойство years присвоит в переменную age.
+// свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
+
+
+
+let user = { name: "John", years: 30 };
+
+// ваш код должен быть с левой стороны:
+// ... = user
+let {name, years: age,isAdmin = false} = user;
+console.log( name ); // John
+console.log( age ); // 30
+console.log( isAdmin ); // false
+
+//  ---------------------- Lesson № 33 Arrey ----------------------
+
+
+const arr = [1, 2, 3, 6, 8];
+
+// arr.push(10, 15, 18);
+
+
+// console.log(arr[6]);
+
+// Метод перебору масиву №1
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);                  
+// }
+
+// Метод перебору масиву №2
+// for(let value of arr) {
+//     console.log(value);
+// }
+// Метод перебору масиву №3
+arr.forEach(function (item, i, arr) {
+    console.log(`${i}: ${item} в середині масиву ${arr}`);
+});
