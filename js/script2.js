@@ -514,19 +514,19 @@ P.S. Функции вызывать не обязательно*/
 
 
 
-let user = { name: "John", years: 30 };
+// let user = { name: "John", years: 30 };
 
-// ваш код должен быть с левой стороны:
-// ... = user
-let {name, years: age,isAdmin = false} = user;
-console.log( name ); // John
-console.log( age ); // 30
-console.log( isAdmin ); // false
+// // ваш код должен быть с левой стороны:
+// // ... = user
+// let {name, years: age,isAdmin = false} = user;
+// console.log( name ); // John
+// console.log( age ); // 30
+// console.log( isAdmin ); // false
 
 //  ---------------------- Lesson № 33 Arrey ----------------------
 
 
-const arr = [1, 2, 3, 6, 8];
+// const arr = [1, 2, 3, 6, 8];
 
 // arr.push(10, 15, 18);
 
@@ -543,6 +543,49 @@ const arr = [1, 2, 3, 6, 8];
 //     console.log(value);
 // }
 // Метод перебору масиву №3
-arr.forEach(function (item, i, arr) {
-    console.log(`${i}: ${item} в середині масиву ${arr}`);
-});
+// arr.forEach(function (item, i, arr) {
+//     console.log(`${i}: ${item} в середині масиву ${arr}`);
+// });
+
+
+
+// for(let i = 2; i <= 10; i++) {
+//    if( i % 2 ==0) {
+//        console.log(i);
+//    }
+// }
+
+// for (let i = 0; i < 3; i++) {
+//     console.log( `number ${i}!` );
+//   }
+
+// let i = 0;
+// while(i < 3){
+//     console.log(`number ${i}!`);
+//     i++;
+//   }
+
+// let num;
+
+// do {
+//     num = prompt("Ddtcnb xbckj ,jkmit 100", 0);
+// } while(num <=100 && num);
+
+// --------------------   Алгоритми ---------------------
+
+// Лінійний пошук
+const arr = [1, 2, 3, 4, 5, 6, 56, 67];
+
+function linearSearch(t, arr) {
+    let n = arr.length, i = 0;
+    arr[n] = t;
+    while(arr[i] !== t) {
+        i++;
+    }
+    if (i < n) {
+        return i;
+    } else {
+        return -1;
+    }
+}
+console.log(linearSearch(5, arr));
