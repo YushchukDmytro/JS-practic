@@ -573,19 +573,62 @@ P.S. Функции вызывать не обязательно*/
 
 // --------------------   Алгоритми ---------------------
 
-// Лінійний пошук
-const arr = [1, 2, 3, 4, 5, 6, 56, 67];
+// Лінійний пошук .Linear search
+// const arr = [1, 2, 3, 4, 5, 6, 56, 67];
 
-function linearSearch(t, arr) {
-    let n = arr.length, i = 0;
-    arr[n] = t;
-    while(arr[i] !== t) {
-        i++;
-    }
-    if (i < n) {
-        return i;
-    } else {
-        return -1;
-    }
+// function linearSearch(t, arr) {
+//     let n = arr.length, i = 0;
+//     arr[n] = t;
+//     while(arr[i] !== t) {
+//         i++;
+//     }
+//     if (i < n) {
+//         return i;
+//     } else {
+//         return -1;
+//     }
+// }
+// console.log(linearSearch(5, arr));
+
+
+
+
+
+
+
+// Binary search 
+
+
+// function binarySearch(t, arr) {
+//     let i = 0, 
+//     j = arr.length - 1,
+//     k;
+//     while(i <= j) {
+//         k = Math.floor((i+j) / 2);
+//         if(t === arr[k]) {
+//             return k;
+//         } else if(t < arr[k]) {
+//             j = k - 1;
+//         } else {
+//             i = k + 1;
+//         }
+//     }
+//     return - 1;
+// }
+
+// console.log(binarySearch('her', arr));
+
+const arr = ['bc', 'abcde', 'ab', 'abcdef', 'abc'];
+function BubbleSort(arr)       // A - массив, который нужно
+{                            // отсортировать по возрастанию.
+    let n = arr.length;
+    for (let i = 0; i < n-1; i++)
+     { for (let j = 0; j < n-1-i; j++)
+        { if (arr[j+1] < arr[j])
+           { let t = arr[j+1]; arr[j+1] = arr[j]; arr[j] = t; }
+        }
+     }                     
+    return arr;    // На выходе сортированный по возрастанию массив A.
 }
-console.log(linearSearch(5, arr));
+
+console.log(BubbleSort(arr));
