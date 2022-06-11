@@ -618,17 +618,74 @@ P.S. Функции вызывать не обязательно*/
 
 // console.log(binarySearch('her', arr));
 
-const arr = ['bc', 'abcde', 'ab', 'abcdef', 'abc'];
-function BubbleSort(arr)       // A - массив, который нужно
-{                            // отсортировать по возрастанию.
-    let n = arr.length;
-    for (let i = 0; i < n-1; i++)
-     { for (let j = 0; j < n-1-i; j++)
-        { if (arr[j+1] < arr[j])
-           { let t = arr[j+1]; arr[j+1] = arr[j]; arr[j] = t; }
-        }
-     }                     
-    return arr;    // На выходе сортированный по возрастанию массив A.
+// const arr = ['bc', 'abcde', 'ab', 'abcdef', 'abc'];
+// function BubbleSort(arr)       // A - массив, который нужно
+// {                            // отсортировать по возрастанию.
+//     let n = arr.length;
+//     for (let i = 0; i < n-1; i++)
+//      { for (let j = 0; j < n-1-i; j++)
+//         { if (arr[j+1] < arr[j])
+//            { let t = arr[j+1]; arr[j+1] = arr[j]; arr[j] = t; }
+//         }
+//      }                     
+//     return arr;    // На выходе сортированный по возрастанию массив A.
+// }
+
+// console.log(BubbleSort(arr));
+
+//  ---------------------- Lesson № 35 Spred,  ----------------------
+
+
+let str = "Dima",
+    strTwo = str;
+
+    strTwo = "Rita " + strTwo;
+
+    console.log(strTwo);
+    console.log(str);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
 }
 
-console.log(BubbleSort(arr));
+const arr = [2, 5, 7];
+
+log(...arr);
+
+
+const arr1 = {
+    one: 1,
+    two: 2
+};
+const arr2 = {
+    three: 3,
+    four: 4
+};
+
+Object.assign(arr1, arr2);
+
+
+console.log(arr1);
+console.log(arr2);
+
+
+let obj1 = {
+    foo: "baz",
+    x:42
+};
+
+let obj2 = {
+    foo: "bar",
+    y: 24
+};
+
+let obj1Clone = {...obj1};
+
+let objMerged = {...obj1, ...obj2};
+
+console.log(obj1);
+console.log(obj1Clone);
+console.log(objMerged);
