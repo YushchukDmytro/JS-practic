@@ -689,3 +689,82 @@ let objMerged = {...obj1, ...obj2};
 console.log(obj1);
 console.log(obj1Clone);
 console.log(objMerged);
+
+
+const array = [
+    "a",
+    "c",
+    "d", {
+      four: 4
+    },
+  ];
+  const newArray = [...array];
+  console.log(newArray);
+  // Result 
+  // ["a", "c", "d", { four: 4 }]
+
+//    ------------- Practice -------------
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+// function showExperience(plan) {
+//     const{exp} = plan.skills;
+//     return exp;
+// }
+
+// console.log(showExperience(personalPlanPeter));
+
+
+
+// function showProgrammingLangs(plan) {
+//     let str = '';
+//     const {programmingLangs} = plan.skills;
+//      for(let key in programmingLangs) {
+//          str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//      }
+//      return str;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+
+function standardizeStrings(arr) {
+
+    arr.forEach(function(name){
+        console.log(name.toLowerCase());   
+    });
+}
+
+standardizeStrings(favoriteCities);
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    let str = "";
+
+    if(arr.length === 0) {
+        str = "Семья пуста";
+    } else {
+        str = "Семья состоит из: ";
+    }
+
+    arr.forEach(function (member) {
+
+        str += ` ${member}`;
+    });
+
+    return str;
+}
+
+console.log(showFamily(family));
