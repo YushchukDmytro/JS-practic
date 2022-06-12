@@ -92,65 +92,65 @@
 // Як тільки оператор ||("або") знаходить правду він перестає працювати(перевіряти код).
 //  Якщо жодне зі значень не правда(false) ми отримуємо останнє неправдиве значення.
 
-const chiken = 3;
-const soda = 0;
-const potatos = 3;
-const nuggets = 2;
+// const chiken = 3;
+// const soda = 0;
+// const potatos = 3;
+// const nuggets = 2;
 
 
-if (chiken === 3 && soda === 2 || potatos === 3 && nuggets) {
-	console.log('All right!');
-} else {
-	console.log('fuck you!');
-}
+// if (chiken === 3 && soda === 2 || potatos === 3 && nuggets) {
+// 	console.log('All right!');
+// } else {
+// 	console.log('fuck you!');
+// }
 
-console.log(chiken === 3 && soda === 2 || potatos === 3 && nuggets);
+// console.log(chiken === 3 && soda === 2 || potatos === 3 && nuggets);
 
 // Оператор (! - "	Не") - спочатку цей оператор, перетворює аргумент до якого він застосований,
 // в логічний тип даних(true/false).
 
-//Практичне завдання № 1
-console.log(NaN || 2 || undefined); // 2
+// //Практичне завдання № 1
+// console.log(NaN || 2 || undefined); // 2
 
-console.log(NaN && 2 && undefined); // NaN
+// console.log(NaN && 2 && undefined); // NaN
 
-console.log(1 && 2 && 3); // 3
+// console.log(1 && 2 && 3); // 3
 
-console.log(!1 && 2 || !3); // false
+// console.log(!1 && 2 || !3); // false
 
-console.log(25 || null && !3); // 25
+// console.log(25 || null && !3); // 25
 
-console.log(NaN || null || !3 || undefined || 5); // 5
+// console.log(NaN || null || !3 || undefined || 5); // 5
 
-console.log(NaN || null && !3 && undefined || 5); // 5
+// console.log(NaN || null && !3 && undefined || 5); // 5
 
-console.log(5 === 5 && 3 > 1 || 5); // true
+// console.log(5 === 5 && 3 > 1 || 5); // true
 
-// Практичне завдання № 2
+// // Практичне завдання № 2
 
-const hame = 3;
-const chees = 3;
-const pepsi = 0;
-const panini = 2;
+// const hame = 3;
+// const chees = 3;
+// const pepsi = 0;
+// const panini = 2;
 
-if (hame === 3 && pepsi || chees === 3 && panini) {
-	console.log('Done!');
-}
-console.log(hame === 3 && pepsi || chees === 3 && panini);
-// Умова виконується(значення 2)!
+// if (hame === 3 && pepsi || chees === 3 && panini) {
+// 	console.log('Done!');
+// }
+// console.log(hame === 3 && pepsi || chees === 3 && panini);
+// // Умова виконується(значення 2)!
 
-// Практичне завдання № 3
+// // Практичне завдання № 3
 
-let hamburger;
-const fries = NaN;
-const cola = 0;
-const noga = 2;
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const noga = 2;
 
-if (hamburger || cola || fries === 3 || noga) {
-	console.log('Done!');
-}
+// if (hamburger || cola || fries === 3 || noga) {
+// 	console.log('Done!');
+// }
 
-console.log(hamburger || cola || fries === 3 || noga);
+// console.log(hamburger || cola || fries === 3 || noga);
 
 // Умова виконується(значення 2)!
 
@@ -180,27 +180,27 @@ console.log(hamburger || cola || fries === 3 || noga);
 // 	num++;
 // }
 
-let i = 2;
+// let i = 2;
 
-while (i < 16) {
-	i++;
-	if( i % 2 === 0) {
-		continue;
-	} else {
-		console.log(i);
-	}
-}
-
-
+// while (i < 16) {
+// 	i++;
+// 	if( i % 2 === 0) {
+// 		continue;
+// 	} else {
+// 		console.log(i);
+// 	}
+// }
 
 
-for (let i = 2; i <= 16; i++) {
-	if (i % 2 === 0) {
-		continue;
-	} else {
-		console.log(i);
-	}
-}
+
+
+// for (let i = 2; i <= 16; i++) {
+// 	if (i % 2 === 0) {
+// 		continue;
+// 	} else {
+// 		console.log(i);
+// 	}
+// }
 
 
 
@@ -210,84 +210,84 @@ for (let i = 2; i <= 16; i++) {
 // }
 // while(num < 55);
 
-for (let i = 1; i < 10; i++) {
-	if (i === 6) {
-		// break;
-		continue;
-	}
-	console.log(i);
+// for (let i = 1; i < 10; i++) {
+// 	if (i === 6) {
+// 		// break;
+// 		continue;
+// 	}
+// 	console.log(i);
 
-}
+// }
 
-for (let i = 20; i >= 10; i--) {
-	if(i === 13) {
-		break;
-	}
-	console.log(i);
-}
+// for (let i = 20; i >= 10; i--) {
+// 	if(i === 13) {
+// 		break;
+// 	}
+// 	console.log(i);
+// }
 
-function firstTask() {
-	// Пишем решение вот тут
-	for(let i = 5; i <= 10; i++) {
-console.log(i);
-}
-	
-}
-firstTask();
+// function firstTask() {
+// 	// Пишем решение вот тут
+// 	for(let i = 5; i <= 10; i++) {
+// console.log(i);
+// }
 
-
-function fifthTask() {
-	const arrayOfNumbers = [];
-
-	for (let i = 5; i < 11; i++) {
-			arrayOfNumbers[i - 5] = i;
-	}
-
-	console.log(arrayOfNumbers);
-	return arrayOfNumbers;
-}
-
-fifthTask();
+// }
+// firstTask();
 
 
+// function fifthTask() {
+// 	const arrayOfNumbers = [];
+
+// 	for (let i = 5; i < 11; i++) {
+// 			arrayOfNumbers[i - 5] = i;
+// 	}
+
+// 	console.log(arrayOfNumbers);
+// 	return arrayOfNumbers;
+// }
+
+// fifthTask();
 
 
-function firstTask() {
-	// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-	const arr = [3, 5, 8, 16, 20, 23, 50];
-	const result = [];
-
-	// Пишем решение вот тут
-	for(let i = 0; i < arr.length; i++) {
-		result[i] = arr[i];
-		
-	}
-	console.log(result);
-	// Не трогаем
-	return result;
-}
-
-firstTask();
 
 
-function secondTask() {
-	// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-	const data = [5, 10, 'Shopping', 20, 'Homework'];
+// function firstTask() {
+// 	// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+// 	const arr = [3, 5, 8, 16, 20, 23, 50];
+// 	const result = [];
 
-	// Пишем решение вот тут
-	for(let i = 0; i < data.length; i++) {
-		if(typeof(data[i]) === 'number') {
-			data[i] = data[i] * 2;
-		} else if(typeof(data[i] === 'string')) {
-			data[i]= `${data[i]} - done`;
-		}
-	}
-	console.log(data);
-	// Не трогаем
-	return data;
-}
+// 	// Пишем решение вот тут
+// 	for(let i = 0; i < arr.length; i++) {
+// 		result[i] = arr[i];
 
-secondTask();
+// 	}
+// 	console.log(result);
+// 	// Не трогаем
+// 	return result;
+// }
+
+// firstTask();
+
+
+// function secondTask() {
+// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+// 	const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+// 	// Пишем решение вот тут
+// 	for(let i = 0; i < data.length; i++) {
+// 		if(typeof(data[i]) === 'number') {
+// 			data[i] = data[i] * 2;
+// 		} else if(typeof(data[i] === 'string')) {
+// 			data[i]= `${data[i]} - done`;
+// 		}
+// 	}
+// 	console.log(data);
+// 	// Не трогаем
+// 	return data;
+// }
+
+// secondTask();
 
 
 // let result = '';
@@ -303,27 +303,27 @@ secondTask();
 
 // console.log(result);
 
-const lines = 5;
-let result = '';
+// const lines = 5;
+// let result = '';
 
-for (let i = 0; i <= lines; i++) {
-    for (let j = 0; j < lines - i; j++) {
-        result += " ";
-    }
-    for (let j = 0; j < 2 * i + 1; j++) {
-        result += "*";
-    }
-    result += "\n";
-}
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//         result += " ";
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
 
-console.log(result);
+// console.log(result);
 
 
 
 
 //   ------------------------ Lesson №27,5 Практика по функціях --------------------------
 
-																					// ----------- № 1 ---------
+// ----------- № 1 ---------
 
 // function sayHello(name) {
 // 	return `Привет, ${name}!`;
@@ -430,7 +430,7 @@ console.log(result);
 
 
 // function findMaxNumber(a, b, c, d) {
-	
+
 // 	if(typeof(a) !== "number" ||
 // 		typeof(b) !== "number" ||
 // 		typeof(c) !== "number" ||
@@ -453,7 +453,7 @@ console.log(result);
 
 // function nice() {
 // 	console.log(`Діма: топ поп!`);
-	
+
 // }
 
 // function nice2() {
@@ -575,7 +575,7 @@ console.log(result);
 // 		for(let i in call[key]) {
 // 			console.log(`Свойство ${i} имеет значение ${call[key][i]}`);
 // 		}
-		
+
 // } else {
 // 	console.log(`Свойство ${key} имеет значение ${call[key]}`);
 // 	length ++;
@@ -855,3 +855,52 @@ console.log(result);
 // }
 
 // console.log(showFamily(family));
+
+
+//    ----------------------- Передача по ссилці чи значенню. Spread оператор(Повторення уроку)
+
+
+let line = {
+	name: "porn",
+	age: 40,
+	have: {
+		boobs: 3
+	}
+};
+
+let addAll = {
+	dick: 15,
+	IQ: 0
+};
+
+// console.log(line);
+// console.log(addAll);
+let myCopy = Object.assign({}, addAll);
+
+myCopy.IQ = 99;
+
+console.log(addAll);
+console.log(myCopy);
+
+
+
+function copyObj(mainLine) {
+	let lineCopy = {};
+	let key;
+	for (key in mainLine) {
+		lineCopy[key] = mainLine[key];
+	}
+	return lineCopy;
+}
+
+const newLine = copyObj(line);
+
+
+
+const oldArray = [3, 5, 7, 9];
+const newArray = oldArray.slice();
+
+newArray[3] = 435;
+
+console.log(...oldArray);		
+// console.log(oldArray);		
