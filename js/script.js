@@ -860,47 +860,154 @@
 //    ----------------------- Передача по ссилці чи значенню. Spread оператор(Повторення уроку)
 
 
-let line = {
-	name: "porn",
-	age: 40,
-	have: {
-		boobs: 3
-	}
-};
+// let line = {
+// 	name: "porn",
+// 	age: 40,
+// 	have: {
+// 		boobs: 3
+// 	}
+// };
 
-let addAll = {
-	dick: 15,
-	IQ: 0
-};
+// let addAll = {
+// 	dick: 15,
+// 	IQ: 0
+// };
 
-// console.log(line);
+// // console.log(line);
+// // console.log(addAll);
+// let myCopy = Object.assign({}, addAll);
+
+// myCopy.IQ = 99;
+
 // console.log(addAll);
-let myCopy = Object.assign({}, addAll);
-
-myCopy.IQ = 99;
-
-console.log(addAll);
-console.log(myCopy);
+// console.log(myCopy);
 
 
 
-function copyObj(mainLine) {
-	let lineCopy = {};
-	let key;
-	for (key in mainLine) {
-		lineCopy[key] = mainLine[key];
-	}
-	return lineCopy;
+// function copyObj(mainLine) {
+// 	let lineCopy = {};
+// 	let key;
+// 	for (key in mainLine) {
+// 		lineCopy[key] = mainLine[key];
+// 	}
+// 	return lineCopy;
+// }
+
+// const newLine = copyObj(line);
+
+
+
+// const oldArray = [3, 5, 7, 9];
+// const newArray = oldArray.slice();
+
+// newArray[3] = 435;
+
+// console.log(...oldArray);		
+// // console.log(oldArray);		
+
+
+//  ---------------------- Lesson № 40 Замыкание и лексическое окружение ----------------------
+
+
+// let number = 5; debugger
+
+
+// function logNumber() {
+// 	// let number = 4; debugger
+// 	console.log(number);
+// }
+
+// number = 6;
+
+// logNumber(); debugger
+
+
+// {
+// 	let msg = "Hello";
+	
+// }
+
+// console.log(msg);
+
+
+
+
+// •	Какое будет выведено значение: let x = 5; alert( x++ ); ?      
+
+// •	Чему равно такое выражение: [ ] + false - null + true ?       
+
+// •	Что выведет этот код: let y = 1; let x = y = 2; alert(x); ?      
+
+// •	Чему равна сумма [ ] + 1 + 2?           
+
+// •	Что выведет этот код: alert( "1"[0] )?       
+
+// •	Чему равно 2 && 1 && null && 0 && undefined ? 
+
+// •	Есть ли разница между выражениями? !!( a && b ) и (a && b)?      
+
+// •	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?     
+
+// •	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?   
+
+// •	Что выведет этот код: alert( +"Infinity" ); ?        
+
+// •	Верно ли сравнение: "Ёжик" > "яблоко"?   
+
+// •	Чему равно 0 || "" || 2 || undefined || true || falsе ?      
+
+//  ------------------------ Debug practice -----------------------
+
+
+const restorantData = {
+	menu: [
+			{
+					name: 'Salad Caesar',
+					price: '14$'
+			},
+			{
+					name: 'Pizza Diavola',
+					price: '9$'
+			},
+			{
+					name: 'Beefsteak',
+					price: '17$'
+			},
+			{
+					name: 'Napoleon',
+					price: '7$'
+			}
+	],
+	waitors: [
+			{name: 'Alice', age: 22}, {name: 'John', age: 24}
+	],
+	averageLunchPrice: '20$',
+	openNow: true
+};
+
+function isOpen(prop) {
+	let answer = '';
+	prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+	return answer;
 }
 
-const newLine = copyObj(line);
+console.log(isOpen(restorantData.openNow));
 
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+	if (+fDish.price.slice(0, -1) + (sDish.price) < average) {
+			return 'Цена ниже средней';
+	} else {
+			return 'Цена выше средней';
+	}
+}
 
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
-const oldArray = [3, 5, 7, 9];
-const newArray = oldArray.slice();
-
-newArray[3] = 435;
-
-console.log(...oldArray);		
-// console.log(oldArray);		
+function transferWaitors(data) {
+	const copy = Object.assign({}, data);
+	
+	copy.waitors = {name: 'Mike', age: 32};
+	return copy;
+}
+console.log(transferWaitors(restorantData));
