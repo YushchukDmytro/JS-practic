@@ -1011,3 +1011,6 @@ function transferWaitors(data) {
 	return copy;
 }
 console.log(transferWaitors(restorantData));
+
+
+console.log(typeof(+"Infinity"));
