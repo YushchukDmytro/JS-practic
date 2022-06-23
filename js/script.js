@@ -924,7 +924,7 @@
 
 // {
 // 	let msg = "Hello";
-	
+
 // }
 
 // console.log(msg);
@@ -959,58 +959,145 @@
 //  ------------------------ Debug practice -----------------------
 
 
-const restorantData = {
-	menu: [
-			{
-					name: 'Salad Caesar',
-					price: '14$'
-			},
-			{
-					name: 'Pizza Diavola',
-					price: '9$'
-			},
-			{
-					name: 'Beefsteak',
-					price: '17$'
-			},
-			{
-					name: 'Napoleon',
-					price: '7$'
-			}
-	],
-	waitors: [
-			{name: 'Alice', age: 22}, {name: 'John', age: 24}
-	],
-	averageLunchPrice: '20$',
-	openNow: true
+// const restorantData = {
+// 	menu: [
+// 			{
+// 					name: 'Salad Caesar',
+// 					price: '14$'
+// 			},
+// 			{
+// 					name: 'Pizza Diavola',
+// 					price: '9$'
+// 			},
+// 			{
+// 					name: 'Beefsteak',
+// 					price: '17$'
+// 			},
+// 			{
+// 					name: 'Napoleon',
+// 					price: '7$'
+// 			}
+// 	],
+// 	waitors: [
+// 			{name: 'Alice', age: 22}, {name: 'John', age: 24}
+// 	],
+// 	averageLunchPrice: '20$',
+// 	openNow: true
+// };
+
+// function isOpen(prop) {
+// 	let answer = '';
+// 	prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+// 	return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow));
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+// 	if (+fDish.price.slice(0, -1) + (sDish.price) < average) {
+// 			return 'Цена ниже средней';
+// 	} else {
+// 			return 'Цена выше средней';
+// 	}
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+// function transferWaitors(data) {
+// 	const copy = Object.assign({}, data);
+
+// 	copy.waitors = {name: 'Mike', age: 32};
+// 	return copy;
+// }
+// console.log(transferWaitors(restorantData));
+
+
+// console.log(typeof(+"Infinity"));
+
+//  ---------------------- Lesson № 47 Рекурсія ----------------------
+
+
+let students = {
+	js: [{
+		name: 'John',
+		progress: 100
+	}, {
+		name: 'Ivan',
+		progress: 60
+	}],
+	html: {
+		basic: [{
+			name: 'Peter',
+			progress: 20
+		}, {
+			name: 'Ann',
+			progress: 18
+		}],
+		pro: [{
+			name: 'Sam',
+			progress: 10
+		}]
+	}
+
 };
 
-function isOpen(prop) {
-	let answer = '';
-	prop ? answer = 'Открыто' : answer = 'Закрыто';
+function getTotalProgressByIteration(data) {
+	let total = 0;
+	let students = 0;
 
-	return answer;
-}
+	for (let course of Object.values(data)) {
+		if (Array.isArray(course)) {
+			students += course.length;
 
-console.log(isOpen(restorantData.openNow));
+			for (let i = 0; i < course.length; i++) {
+				total += course[i].progress;
+			}
+		} else {
+			for (let subCourse of Object.values(course)) {
+				students += subCourse.length;
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-	if (+fDish.price.slice(0, -1) + (sDish.price) < average) {
-			return 'Цена ниже средней';
-	} else {
-			return 'Цена выше средней';
+				for (let i = 0; i < subCourse.length; i++) {
+					total += subCourse[i].progress;
+				}
+			}
+		}
 	}
+
+
+	return total / students;
 }
 
-console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+// console.log(getTotalProgressByIteration(students));
 
-function transferWaitors(data) {
-	const copy = Object.assign({}, data);
-	
-	copy.waitors = {name: 'Mike', age: 32};
-	return copy;
+function getTotalProgressByRecursion(data) {
+	if (Array.isArray(data)) {
+		let total = 0;
+
+		for (let i = 0; i < data.length; i++) {
+			total += data[i].progress;
+		}
+		return [total, data.length];
+	} else {
+		let total = [0, 0];
+
+		for (let subData of Object.values(data)) {
+			const subDataArr = getTotalProgressByRecursion(subData);
+			total[0] += subDataArr[0];
+			total[1] += subDataArr[1];
+		}
+		return total;
+	}
+
 }
-console.log(transferWaitors(restorantData));
+
+const result = getTotalProgressByRecursion(students);
+
+console.log(result[0]/result[1]);
 
 
-console.log(typeof(+"Infinity"));
+
+
+function factorial() {
+    
+}
